@@ -1,43 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:torres/pagina_p.dart';
+import 'package:torres/widget015.dart';
+import 'package:torres/widget030.dart';
+import 'package:torres/widget045.dart';
+import 'package:torres/widget060.dart';
+import 'package:torres/widget075.dart';
+import 'package:torres/widget090.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MapFlutter());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MapFlutter extends StatelessWidget {
+  const MapFlutter({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Rutas entre paginas',
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const PantallaUno(),
+        '/widget15': (context) => const Widget015(),
+        '/widget30': (context) => const Widget030(),
+        '/widget45': (context) => const Widget045(),
+        '/widget60': (context) => const Widget060(),
+        '/widget75': (context) => const Widget076(),
+        '/widget90': (context) => const Widget090(),
+      },
     );
   }
 }
